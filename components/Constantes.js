@@ -11,6 +11,8 @@ justify-content: center;
 export const ImagemEntrega = styled.ImageBackground`
   width: 100%;
   height:100%;
+  align-items: center;
+  justify-content: center;
   `;
 
 export const IniciarBotao= styled.TouchableOpacity`
@@ -57,8 +59,9 @@ position: absolute;
 width: 413px;
 height: 138px;
 left: 0px;
-top: 0px;
-background-color: #9027B0;
+top: 28px;
+
+background: #9027B0;
 `
 
 export const TextoInputLogin= styled.TextInput`
