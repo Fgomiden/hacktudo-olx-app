@@ -1,11 +1,20 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import {Container} from '../components/Constantes'
 
-const Inicio = () => {
+import React from 'react';
+import { View, Text, ImageBackground, TouchableOpacity} from 'react-native';
+import {Container, ImagemEntrega, IniciarBotao, telaRoxa, TextoIniciar} from '../components/Constantes'
+import entregar from  '../assets/assets/entregar.png'
+import { NavigationContainer } from '@react-navigation/native';
+
+const Inicio = ({navigation}) => {
   return(
       <Container>
-          <Text>Tela Inicial</Text>
+        <ImagemEntrega source={entregar}>
+          <IniciarBotao
+          onPress={() => navigation.navigate('Login')}>
+            <TextoIniciar>Iniciar</TextoIniciar>
+          </IniciarBotao>
+          
+          </ImagemEntrega>
       </Container>
   ) 
 }
