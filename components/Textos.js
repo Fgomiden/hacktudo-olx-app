@@ -9,3 +9,6 @@ export const TextoCinza = styled(Texto)`
 export const TextoPreto = styled(Texto)`
     color:${props => props.theme.preto};
 `
+export const TextoBranco = styled(Texto)`
+    color:${props => props.theme.branco};
+`

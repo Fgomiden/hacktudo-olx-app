@@ -6,7 +6,7 @@ import { TextoInputCinza } from "../components/Inputs";
 import { BotaoLaranja } from "../components/Botoes";
 import { cor } from "../theme/Tema";
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <Container flex={1} justify="center" bgCor={cor.roxo}>
       <Container
@@ -66,7 +66,13 @@ const Login = () => {
           </Container>
         </Container>
         <Container flex={0.3} align="center">
-          <BotaoLaranja largura="200" altura="60">
+          <BotaoLaranja 
+            largura="200" 
+            altura="60" 
+            onPress={() => {
+              navigation.navigate("Perfil");
+            }}
+          >
             <TextoCinza tamFonte="26">Entrar</TextoCinza>
           </BotaoLaranja>
         </Container>
