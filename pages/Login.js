@@ -1,132 +1,84 @@
-// import React from 'react';
-// import { View, Text, ImageBackground, TouchableOpacity, TextInput} from 'react-native';
-// import {Container, ImagemEntrega, IniciarBotao, RetanguloLogin, RetanguloRoxoLogin, telaRoxa, TextoIniciar, TextoInputLogin} from '../components/Constantes'
-// import entregar from  '../assets/assets/entregar.png'
+import React from "react";
+import { View, Text } from "react-native";
+import { Container, ContCircular } from "../components/Constantes";
+import { TextoCinza, TextoPreto } from "../components/Textos";
+import { TextoInputCinza } from "../components/Inputs";
+import { BotaoLaranja } from "../components/Botoes";
+import { cor } from "../theme/Tema";
 
-// const Login = ({navigation}) => {
-//   return(
-//       <Container navigation={navigation}>
-//          {/* <CustomHeader title="Revista" isHome={true}  navigation={navigation}/> */}
-//          <RetanguloRoxoLogin/>
-//          <RetanguloLogin>
-//          <View >
-//               <Text>Email</Text>
-//               <TextoInputLogin
-//               placeholder=" Email"
-//               />
-
-//               <Text>Senha</Text>
-//               <TextoInputLogin
-//               placeholder=" Senha"
-//               />
-//       </View>
-//    <IniciarBotao>
-//      <TextoIniciar>Entrar</TextoIniciar>
-//    </IniciarBotao>
-      
-//          </RetanguloLogin>
-        
-        
-        
-//       </Container>
-//   ) 
-// }
-
-// export default Login;
-
-
-
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image,ScrollView, TextInput } from 'react-native';
-
-export default function Pag1() {
-  
+const Login = ({navigation}) => {
   return (
-    <ScrollView>
-    <View style={styles.container}>
-      
-      <View style={{flex:1, padding:10}}>
-        <TextInput
-        style={styles.input}
-        placeholder=" Insira seu nome"
-        multiline
-        
-        />
-        <TextInput
-        style={styles.input}
-         placeholder=" Insira sua localidade"
-        />
-        <TextInput
-        style={styles.input}
-        placeholder=" Insira sua Data de Nascimento"
-        />
-        <TextInput
-         style={styles.input}
-        placeholder=" Insira seu email"
-        />
-        <TextInput
-         style={styles.input}
-        placeholder=" Insira sua senha"
-        />
-      </View>
-   <TouchableOpacity
-   style={styles.button}
-   >
-     <Text>Continuar</Text>
-   </TouchableOpacity>
-      </View> 
-      </ScrollView>
+    <Container flex={1} justify="center" bgCor={cor.roxo}>
+      <Container
+        flex={0.2}
+        direcao="column"
+        justify="center"
+        align="flex-start"
+      >
+        <TextoCinza tamFonte="30" style={{ marginLeft: 20 }}>
+          Login
+        </TextoCinza>
+      </Container>
+      <ContCircular
+        flex={0.8}
+        bgCor={cor.cinza_claro}
+        bdTopLeft="35"
+        bdTopRight="35"
+        bdBottomLeft="0"
+        bdBottomRight="0"
+      >
+        <Container
+          flex={0.7}
+          direcao="column"
+          align="flex-start"
+          justify="center"
+          style={{ marginHorizontal: 20 }}
+        >
+          <Container flex={0.3} direcao="row">
+            <Container flex={1} direcao="column">
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                E-mail
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder=""
+                name="email"
+              />
+            </Container>
+          </Container>
+          <Container flex={0.3} direcao="row">
+            <Container flex={1} direcao="column">
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                Senha
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                autoCapitalize="none"
+                placeholder=""
+                name="senha"
+              />
+            </Container>
+          </Container>
+          <Container flex={0.1} direcao="row">
+            <TextoPreto tamFonte="18">Esqueceu sua senha ?</TextoPreto>
+          </Container>
+        </Container>
+        <Container flex={0.3} align="center">
+          <BotaoLaranja 
+            largura="200" 
+            altura="60" 
+            onPress={() => {
+              navigation.navigate("Perfil");
+            }}
+          >
+            <TextoCinza tamFonte="26">Entrar</TextoCinza>
+          </BotaoLaranja>
+        </Container>
+      </ContCircular>
+    </Container>
   );
-}
+};
 
-       
-   
-const styles = StyleSheet.create({
-  container: {
-        flex: 1,
-        padding:50,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      button:{
-          width:150,
-          height:50,
-          borderRadius:5,
-          justifyContent:'center',
-          alignItems:'center',
-          backgroundColor:'#008542'
-      },
-      buttonText:{
-        color: '#003844',
-        fontFamily: 'Open Sans',
-      },
-      avatar:{
-        margin:0,
-        width:100,
-        height:100,
-        justifyContent:'center',
-        alignItems:'center'
-      },
-  image:{
-    width:100,
-    height:100,
-    resizeMode:'contain'
-  },
-  input: {
-    margin: 15,
-    height: 40,
-    // borderWidth: 1,
-    backgroundColor:'#E5E5E5', color:'#008542', borderRadius: 5
- },
- submitButton: {
-    backgroundColor: '#7a42f4',
-    padding: 10,
-    margin: 15,
-    height: 40,
- },
- submitButtonText:{
-    color: 'white'
- },
-
-});
+export default Login;
