@@ -70,7 +70,7 @@ const Login = ({navigation}) => {
             largura="200" 
             altura="60" 
             onPress={() => {
-              navigation.navigate("Perfil");
+              navigation.navigate("Menu");
             }}
           >
             <TextoCinza tamFonte="26">Entrar</TextoCinza>

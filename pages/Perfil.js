@@ -7,10 +7,11 @@ import { BotaoLaranja } from "../components/Botoes";
 import { cor } from "../theme/Tema";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 
-const Perfil = ({navigation}) => {
+const Perfil = ({ navigation }) => {
   return (
     <Container flex={1} bgCor={cor.roxo}>
-      <ContCircular flex={0.15}
+      <ContCircular
+        flex={0.15}
         direcao="row"
         bgCor={cor.cinza_claro}
         bdTopLeft="0"
@@ -23,9 +24,13 @@ const Perfil = ({navigation}) => {
           direcao="column"
           justify="center"
           align="center"
-          style={{marginTop:20}}
+          style={{ marginTop: 20 }}
         >
-          <TouchableOpacity onPress={() => {navigation.navigate("Login")}}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Menu");
+            }}
+          >
             <FontAwesome5 name="arrow-left" size={24} color="black" />
           </TouchableOpacity>
         </Container>
@@ -34,11 +39,9 @@ const Perfil = ({navigation}) => {
             flex={1}
             direcao="row"
             align="flex-start"
-            style={{marginTop:20}}
+            style={{ marginTop: 20 }}
           >
-          <TextoPreto tamFonte="24">
-            Perfil
-          </TextoPreto>            
+            <TextoPreto tamFonte="24">Perfil</TextoPreto>
           </Container>
         </Container>
       </ContCircular>
@@ -63,9 +66,9 @@ const Perfil = ({navigation}) => {
           direcao="column"
           align="flex-start"
           justify="center"
-          style={{ marginHorizontal: 20, marginVertical:10 }}
+          style={{ marginHorizontal: 20, marginVertical: 10 }}
         >
-          <Container flex={0.3} direcao="row" style={{ marginBottom:10}}>
+          <Container flex={0.3} direcao="row" style={{ marginBottom: 10 }}>
             <Container flex={0.7} direcao="column" style={{ marginRight: 10 }}>
               <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
                 Nome
@@ -91,85 +94,85 @@ const Perfil = ({navigation}) => {
               />
             </Container>
           </Container>
-          <Container flex={0.3} direcao="row" style={{ marginBottom:10}}>
+          <Container flex={0.3} direcao="row" style={{ marginBottom: 10 }}>
             <Container flex={0.7} direcao="column" style={{ marginRight: 10 }}>
-                <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
-                  Telefone
-                </TextoPreto>
-                <TextoInputCinza
-                  altura="45"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholder=""
-                  name="email"
-                />
-              </Container>
-              <Container flex={0.3} direcao="column">
-                <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
-                  Genero
-                </TextoPreto>
-                <TextoInputCinza
-                  altura="45"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholder=""
-                  name="email"
-                />
-              </Container>
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                Telefone
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder=""
+                name="email"
+              />
+            </Container>
+            <Container flex={0.3} direcao="column">
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                Genero
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder=""
+                name="email"
+              />
+            </Container>
           </Container>
-          <Container flex={0.3} direcao="row" style={{ marginBottom:10}}>
+          <Container flex={0.3} direcao="row" style={{ marginBottom: 10 }}>
             <Container flex={0.7} direcao="column" style={{ marginRight: 10 }}>
-                <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
-                  Cidade
-                </TextoPreto>
-                <TextoInputCinza
-                  altura="45"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholder=""
-                  name="email"
-                />
-              </Container>
-              <Container flex={0.3} direcao="column">
-                <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
-                  UF
-                </TextoPreto>
-                <TextoInputCinza
-                  altura="45"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholder=""
-                  name="email"
-                />
-              </Container>
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                Cidade
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder=""
+                name="email"
+              />
+            </Container>
+            <Container flex={0.3} direcao="column">
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                UF
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder=""
+                name="email"
+              />
+            </Container>
           </Container>
           <Container flex={0.3} direcao="row">
             <Container flex={1} direcao="column">
-                <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
-                  Endereco
-                </TextoPreto>
-                <TextoInputCinza
-                  altura="45"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholder=""
-                  name="email"
-                />
-              </Container>
+              <TextoPreto tamFonte="23" style={{ marginBottom: 5 }}>
+                Endereco
+              </TextoPreto>
+              <TextoInputCinza
+                altura="45"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder=""
+                name="email"
+              />
+            </Container>
           </Container>
-        </Container> 
-        <Container flex={0.20} align="center" justify="center">
-          <BotaoLaranja 
-            largura="200" 
-            altura="60" 
+        </Container>
+        <Container flex={0.2} align="center" justify="center">
+          <BotaoLaranja
+            largura="200"
+            altura="60"
             onPress={() => {
-              navigation.navigate("Login");
+              navigation.navigate("Menu");
             }}
           >
-            <TextoCinza tamFonte="26">Entrar</TextoCinza>
+            <TextoCinza tamFonte="26">Confirmar</TextoCinza>
           </BotaoLaranja>
         </Container>
-        </ContCircular> 
+      </ContCircular>
     </Container>
   );
 };
