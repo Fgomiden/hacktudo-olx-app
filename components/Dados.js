@@ -25,3 +25,5 @@ const Dados = [
   },
 ];
 export default Dados;
+//status nao precisa
+// add prazo e horario de entrega

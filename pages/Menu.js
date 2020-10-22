@@ -26,7 +26,7 @@ const Menu = ({ navigation }) => {
           justify="center"
           align="flex-start"
         >
-          <TextoPreto tamFonte="24" style={{ marginLeft: 40 }}>
+          <TextoPreto tamFonte="24" style={{ marginLeft: 20 }}>
             Menu
           </TextoPreto>
         </Container>
@@ -35,16 +35,16 @@ const Menu = ({ navigation }) => {
             flex={1}
             direcao="row"
             align="center"
-            justify="space-evenly"
+            justify="flex-end"
+            style={{ marginRight: 20 }}
           >
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate("Perfil");
               }}
             >
-              <MaterialIcons name="person" size={30} color="black" />
+              <FontAwesome5 name="ellipsis-v" size={20} color="black" />
             </TouchableOpacity>
-            <FontAwesome5 name="ellipsis-v" size={20} color="black" />
           </Container>
         </Container>
       </ContCircular>
