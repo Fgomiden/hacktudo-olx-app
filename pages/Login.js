@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Container, ContCircular } from "../components/Constantes";
+import { Container, ContCircularCima } from "../components/Constantes";
 import { TextoCinza, TextoPreto } from "../components/Textos";
 import { TextoInputCinza } from "../components/Inputs";
 import { BotaoLaranja } from "../components/Botoes";
@@ -19,7 +19,7 @@ const Login = ({ navigation }) => {
           Login
         </TextoCinza>
       </Container>
-      <ContCircular flex={0.8} bgCor={cor.cinza_claro}>
+      <ContCircularCima flex={0.8} bgCor={cor.cinza_claro}>
         <Container
           flex={0.7}
           direcao="column"
@@ -69,7 +69,7 @@ const Login = ({ navigation }) => {
             <TextoCinza tamFonte="26">Entrar</TextoCinza>
           </BotaoLaranja>
         </Container>
-      </ContCircular>
+      </ContCircularCima>
     </Container>
   );
 };

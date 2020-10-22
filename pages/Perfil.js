@@ -1,6 +1,10 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { Container, ContCircular } from "../components/Constantes";
+import {
+  Container,
+  ContCircularCima,
+  ContCircularBaixo,
+} from "../components/Constantes";
 import { TextoCinza, TextoPreto, TextoBranco } from "../components/Textos";
 import { TextoInputCinza } from "../components/Inputs";
 import { BotaoLaranja } from "../components/Botoes";
@@ -10,7 +14,7 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 const Perfil = ({ navigation }) => {
   return (
     <Container flex={1} bgCor={cor.roxo}>
-      <ContCircular flex={0.18} direcao="row" bgCor={cor.cinza_claro}>
+      <ContCircularBaixo flex={0.18} direcao="row" bgCor={cor.cinza_claro}>
         <Container flex={0.8} direcao="row" align="center">
           <Container
             flex={1}
@@ -36,7 +40,7 @@ const Perfil = ({ navigation }) => {
             <MaterialIcons name="edit" size={24} color="black" />
           </TouchableOpacity>
         </Container>
-      </ContCircular>
+      </ContCircularBaixo>
       <Container flex={0.25} direcao="column">
         <Container flex={0.6} align="center" justify="center">
           <MaterialIcons name="person" size={110} color="black" />
@@ -45,14 +49,7 @@ const Perfil = ({ navigation }) => {
           <TextoBranco tamFonte="19">Escolha sua foto</TextoBranco>
         </Container>
       </Container>
-      <ContCircular
-        flex={0.8}
-        bgCor={cor.cinza_claro}
-        bdTopLeft="35"
-        bdTopRight="35"
-        bdBottomLeft="0"
-        bdBottomRight="0"
-      >
+      <ContCircularCima flex={0.8} bgCor={cor.cinza_claro}>
         <Container
           flex={1}
           direcao="column"
@@ -153,7 +150,7 @@ const Perfil = ({ navigation }) => {
             </Container>
           </Container>
         </Container>
-      </ContCircular>
+      </ContCircularCima>
     </Container>
   );
 };

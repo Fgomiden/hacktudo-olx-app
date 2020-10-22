@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, SafeAreaView } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import { Container, ContCircular } from "../components/Constantes";
+import { Container, ContCircularCima } from "../components/Constantes";
 import { TextoCinza, TextoPreto, TextoBranco } from "../components/Textos";
 import { TextoInputCinza, TextoInputCinzaClaro } from "../components/Inputs";
 import { BotaoLaranja } from "../components/Botoes";
@@ -42,7 +42,7 @@ const Gerenciamento = ({ navigation }) => {
       <Container flex={0.2} justify="center" align="center">
         <TextoBranco tamFonte="23">Gerenciamento de Entregas</TextoBranco>
       </Container>
-      <ContCircular flex={0.8} bgCor={cor.cinza_claro}>
+      <ContCircularCima flex={0.8} bgCor={cor.cinza_claro}>
         <Container
           flex={0.1}
           direcao="row"
@@ -64,7 +64,7 @@ const Gerenciamento = ({ navigation }) => {
             keyExtractor={(item) => item.id}
           />
         </SafeAreaView>
-      </ContCircular>
+      </ContCircularCima>
     </Container>
   );
 };

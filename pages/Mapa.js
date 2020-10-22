@@ -6,7 +6,6 @@ import { TextoPreto } from '../components/Textos';
 
 const Mapa = () => {
 
-  
   const [userLat, setUserLat] = useState(null);
   const [userLon, setUserLon] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -18,12 +17,13 @@ const Mapa = () => {
         setErrorMsg('Permission to access location was denied');
       }
 
-      const { coords } = await Location.getCurrentPositionAsync();
-      await setUserLat(coords.latitude);
-      await setUserLon(coords.longitude);
+      let {coords} = await Location.getCurrentPositionAsync({});
+      setUserLat(coords.latitude);
+      setUserLon(coords.longitude);
+
     })();
   }, []);
-console.log(userLon);
+
   return(
       <Container bgCor="#FFF" flex={1}>
           <MapView 

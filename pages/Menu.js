@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { Container, ContCircular } from "../components/Constantes";
+import { Container, ContCircularCima, ContCircularBaixo } from "../components/Constantes";
 import { TextoCinza, TextoPreto, TextoBranco } from "../components/Textos";
 import { TextoInputCinza, TextoInputCinzaClaro } from "../components/Inputs";
 import { BotaoLaranja } from "../components/Botoes";
@@ -11,7 +11,7 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 const Menu = ({ navigation }) => {
   return (
     <Container flex={1} bgCor={cor.roxo}>
-      <ContCircular flex={0.15} direcao="row" bgCor={cor.cinza_claro}>
+      <ContCircularBaixo flex={0.15} direcao="row" bgCor={cor.cinza_claro}>
         <Container
           flex={0.7}
           direcao="column"
@@ -39,7 +39,7 @@ const Menu = ({ navigation }) => {
             </TouchableOpacity>
           </Container>
         </Container>
-      </ContCircular>
+      </ContCircularBaixo>
       <Container flex={0.2} direcao="column">
         <Container flex={0.6} align="center" justify="center">
           <MaterialIcons name="person" size={80} color="black" />
@@ -48,7 +48,7 @@ const Menu = ({ navigation }) => {
           <TextoPreto tamFonte="19">Nome</TextoPreto>
         </Container>
       </Container>
-      <ContCircular flex={0.7} bgCor={cor.cinza_claro}>
+      <ContCircularCima flex={0.7} bgCor={cor.cinza_claro}>
         <Container flex={0.3} direcao="column">
           <Container flex={0.5} direcao="row">
             <Container flex={0.5} direcao="row" align="center" justify="center">
@@ -115,7 +115,7 @@ const Menu = ({ navigation }) => {
             </Container>
           </Container>
         </Container>
-      </ContCircular>
+      </ContCircularCima>
     </Container>
   );
 };
