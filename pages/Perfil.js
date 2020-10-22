@@ -11,7 +11,7 @@ const Perfil = ({ navigation }) => {
   return (
     <Container flex={1} bgCor={cor.roxo}>
       <ContCircular
-        flex={0.15}
+        flex={0.18}
         direcao="row"
         bgCor={cor.cinza_claro}
         bdTopLeft="0"
@@ -19,30 +19,30 @@ const Perfil = ({ navigation }) => {
         bdBottomLeft="35"
         bdBottomRight="35"
       >
+        <Container flex={0.8} direcao="row" align="center">
+          <Container
+            flex={1}
+            direcao="row"
+            align="flex-start"
+            style={{ marginLeft: 20 }}
+          >
+            <TextoPreto tamFonte="24">Perfil</TextoPreto>
+          </Container>
+        </Container>
         <Container
           flex={0.2}
           direcao="column"
           justify="center"
           align="center"
-          style={{ marginTop: 20 }}
+          style={{ marginRight: 10 }}
         >
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("Menu");
             }}
           >
-            <FontAwesome5 name="arrow-left" size={24} color="black" />
+            <MaterialIcons name="edit" size={24} color="black" />
           </TouchableOpacity>
-        </Container>
-        <Container flex={0.8} direcao="row" align="center">
-          <Container
-            flex={1}
-            direcao="row"
-            align="flex-start"
-            style={{ marginTop: 20 }}
-          >
-            <TextoPreto tamFonte="24">Perfil</TextoPreto>
-          </Container>
         </Container>
       </ContCircular>
       <Container flex={0.25} direcao="column">
@@ -54,7 +54,7 @@ const Perfil = ({ navigation }) => {
         </Container>
       </Container>
       <ContCircular
-        flex={0.75}
+        flex={0.8}
         bgCor={cor.cinza_claro}
         bdTopLeft="35"
         bdTopRight="35"
@@ -62,7 +62,7 @@ const Perfil = ({ navigation }) => {
         bdBottomRight="0"
       >
         <Container
-          flex={0.8}
+          flex={1}
           direcao="column"
           align="flex-start"
           justify="center"
@@ -160,17 +160,6 @@ const Perfil = ({ navigation }) => {
               />
             </Container>
           </Container>
-        </Container>
-        <Container flex={0.2} align="center" justify="center">
-          <BotaoLaranja
-            largura="200"
-            altura="60"
-            onPress={() => {
-              navigation.navigate("Menu");
-            }}
-          >
-            <TextoCinza tamFonte="26">Confirmar</TextoCinza>
-          </BotaoLaranja>
         </Container>
       </ContCircular>
     </Container>

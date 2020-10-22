@@ -48,7 +48,7 @@ const Menu = ({ navigation }) => {
           </Container>
         </Container>
       </ContCircular>
-      <Container flex={0.15} direcao="column">
+      <Container flex={0.2} direcao="column">
         <Container flex={0.6} align="center" justify="center">
           <MaterialIcons name="person" size={80} color="black" />
         </Container>
@@ -57,14 +57,14 @@ const Menu = ({ navigation }) => {
         </Container>
       </Container>
       <ContCircular
-        flex={0.8}
+        flex={0.7}
         bgCor={cor.cinza_claro}
         bdTopLeft="35"
         bdTopRight="35"
         bdBottomLeft="0"
         bdBottomRight="0"
       >
-        <Container flex={0.2} direcao="column">
+        <Container flex={0.3} direcao="column">
           <Container flex={0.5} direcao="row">
             <Container flex={0.5} direcao="row" align="center" justify="center">
               <TextoPreto tamFonte="18">Distancia</TextoPreto>
@@ -127,22 +127,6 @@ const Menu = ({ navigation }) => {
                 placeholder=""
                 name="email"
               />
-            </Container>
-          </Container>
-        </Container>
-        <Container flex={0.6} direcao="column">
-          <Container flex={0.8} align="center" justify="center">
-            <BotaoLaranja
-              largura="130"
-              altura="130"
-              onPress={() => {
-                navigation.navigate("Perfil");
-              }}
-            >
-              <FontAwesome5 name="map-marked-alt" size={60} color="black" />
-            </BotaoLaranja>
-            <Container flex={0.5} align="center" justify="center">
-              <TextoPreto tamFonte="18">Mapa</TextoPreto>
             </Container>
           </Container>
         </Container>
