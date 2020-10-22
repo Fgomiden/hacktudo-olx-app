@@ -8,7 +8,7 @@ import { BotaoLaranja } from "../components/Botoes";
 import Slider from "@react-native-community/slider";
 import { cor } from "../theme/Tema";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
-import Dados from "../components/Dados";
+import dadosProdutos from "../Dados/dadosProdutos";
 
 const Gerenciamento = ({ navigation }) => {
   const CartaoEntrega = ({ produto, endereco, status }) => (
@@ -59,7 +59,7 @@ const Gerenciamento = ({ navigation }) => {
         </Container>
         <SafeAreaView style={{ flex: 1 }}>
           <FlatList
-            data={Dados}
+            data={dadosProdutos}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
           />
