@@ -10,15 +10,7 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 const Perfil = ({ navigation }) => {
   return (
     <Container flex={1} bgCor={cor.roxo}>
-      <ContCircular
-        flex={0.18}
-        direcao="row"
-        bgCor={cor.cinza_claro}
-        bdTopLeft="0"
-        bdTopRight="0"
-        bdBottomLeft="35"
-        bdBottomRight="35"
-      >
+      <ContCircular flex={0.18} direcao="row" bgCor={cor.cinza_claro}>
         <Container flex={0.8} direcao="row" align="center">
           <Container
             flex={1}

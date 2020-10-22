@@ -11,15 +11,7 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 const Menu = ({ navigation }) => {
   return (
     <Container flex={1} bgCor={cor.roxo}>
-      <ContCircular
-        flex={0.15}
-        direcao="row"
-        bgCor={cor.cinza_claro}
-        bdTopLeft="0"
-        bdTopRight="0"
-        bdBottomLeft="35"
-        bdBottomRight="35"
-      >
+      <ContCircular flex={0.15} direcao="row" bgCor={cor.cinza_claro}>
         <Container
           flex={0.7}
           direcao="column"
@@ -56,14 +48,7 @@ const Menu = ({ navigation }) => {
           <TextoPreto tamFonte="19">Nome</TextoPreto>
         </Container>
       </Container>
-      <ContCircular
-        flex={0.7}
-        bgCor={cor.cinza_claro}
-        bdTopLeft="35"
-        bdTopRight="35"
-        bdBottomLeft="0"
-        bdBottomRight="0"
-      >
+      <ContCircular flex={0.7} bgCor={cor.cinza_claro}>
         <Container flex={0.3} direcao="column">
           <Container flex={0.5} direcao="row">
             <Container flex={0.5} direcao="row" align="center" justify="center">

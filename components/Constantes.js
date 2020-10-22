@@ -10,8 +10,5 @@ export const Container =styled.View`
 `
 
  export const ContCircular = styled(Container)`
-     border-top-left-radius:${props => `${props.bdTopLeft}px`}; 
-     border-top-right-radius:${props => `${props.bdTopRight}px`};
-     border-bottom-left-radius:${props => `${props.bdBottomLeft}px`};
-     border-bottom-right-radius:${props => `${props.bdBottomRight}px`};  
+    border-radius: 35px 35px 0px 0px;
  `

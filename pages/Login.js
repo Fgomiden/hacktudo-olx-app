@@ -6,7 +6,7 @@ import { TextoInputCinza } from "../components/Inputs";
 import { BotaoLaranja } from "../components/Botoes";
 import { cor } from "../theme/Tema";
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   return (
     <Container flex={1} justify="center" bgCor={cor.roxo}>
       <Container
@@ -19,14 +19,7 @@ const Login = ({navigation}) => {
           Login
         </TextoCinza>
       </Container>
-      <ContCircular
-        flex={0.8}
-        bgCor={cor.cinza_claro}
-        bdTopLeft="35"
-        bdTopRight="35"
-        bdBottomLeft="0"
-        bdBottomRight="0"
-      >
+      <ContCircular flex={0.8} bgCor={cor.cinza_claro}>
         <Container
           flex={0.7}
           direcao="column"
@@ -66,9 +59,9 @@ const Login = ({navigation}) => {
           </Container>
         </Container>
         <Container flex={0.3} align="center">
-          <BotaoLaranja 
-            largura="200" 
-            altura="60" 
+          <BotaoLaranja
+            largura="200"
+            altura="60"
             onPress={() => {
               navigation.navigate("BarraInferior");
             }}
