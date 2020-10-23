@@ -26,6 +26,7 @@ const BarraInferior = () => {
         name="Perfil" 
         component={Perfil}
         options={{
+          activeTintColor: `${cor.laranja}`,
           tabBarIcon: () =>
           <MaterialIcons name="person" size={25} color="black" />
         }} 

@@ -16,6 +16,14 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "com.inventario.timeapp",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAfiT1cTH-yLkGIeqydSYrXnBs826uE10g"
+        } 
+      } 
+    },
     "ios": {
       "supportsTablet": true
     },
