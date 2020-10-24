@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Container, ContCircular } from "../components/Constantes";
+import { Container, ContCircularCima } from "../components/Constantes";
 import { TextoCinza, TextoPreto } from "../components/Textos";
 import { TextoInputCinza } from "../components/Inputs";
-import { BotaoLaranja } from "../components/Botoes";
+import {
+  BotaoLaranja,
+  BotaoLaranjaClaro,
+  BotaoCinza,
+} from "../components/Botoes";
 import { cor } from "../theme/Tema";
-
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <Container flex={1} justify="center" bgCor={cor.roxo}>
       <Container
@@ -19,14 +22,7 @@ const Login = () => {
           Login
         </TextoCinza>
       </Container>
-      <ContCircular
-        flex={0.8}
-        bgCor={cor.cinza_claro}
-        bdTopLeft="35"
-        bdTopRight="35"
-        bdBottomLeft="0"
-        bdBottomRight="0"
-      >
+      <ContCircularCima flex={0.8} bgCor={cor.cinza_claro}>
         <Container
           flex={0.7}
           direcao="column"
@@ -61,16 +57,23 @@ const Login = () => {
               />
             </Container>
           </Container>
-          <TextoPreto tamFonte="18">Esqueceu sua senha ?</TextoPreto>
+          <Container flex={0.1} direcao="row">
+            <TextoPreto tamFonte="18">Esqueceu sua senha ?</TextoPreto>
+          </Container>
         </Container>
         <Container flex={0.3} align="center">
-          <BotaoLaranja largura="200" altura="60">
+          <BotaoLaranja
+            largura="200"
+            altura="60"
+            onPress={() => {
+              navigation.navigate("BarraInferior");
+            }}
+          >
             <TextoCinza tamFonte="26">Entrar</TextoCinza>
           </BotaoLaranja>
         </Container>
-      </ContCircular>
+      </ContCircularCima>
     </Container>
   );
 };
-
 export default Login;

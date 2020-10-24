@@ -8,6 +8,9 @@ export const TextoInput = styled.TextInput`
 export const TextoInputCinza = styled(TextoInput)`
     background-color:${props => props.theme.cinza};
 `
+export const TextoInputCinzaClaro = styled(TextoInput)`
+    background-color:${props => props.theme.cinza_claro};
+`
 export const TextoInputLaranja = styled(TextoInput)`
     background-color:${props => props.theme.laranja_claro};
 `
