@@ -13,3 +13,6 @@ export const BotaoCinza = styled(Botao)`
 export const BotaoLaranja = styled(Botao)`
     background:${props => props.theme.laranja};
 `
+export const BotaoLaranjaClaro = styled(Botao)`
+    background:${props => props.theme.laranja_claro};
+`

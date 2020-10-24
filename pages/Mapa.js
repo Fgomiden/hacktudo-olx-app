@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Modal,
+  SafeAreaView,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+  Dimensions,
+} from "react-native";
 import { expo } from "../app.json";
 import { Container, ContCircular } from "../components/Constantes";
 import MapView, { Marker, Polyline } from "react-native-maps";
@@ -7,20 +15,32 @@ import MapViewDirections from "react-native-maps-directions";
 import * as Location from "expo-location";
 import Marcadores from "../Dados/Marcadores";
 import { cor } from "../theme/Tema";
-import { BotaoCinza } from "../components/Botoes";
-import { TextoBranco, TextoPreto } from "../components/Textos";
+import {
+  BotaoCinza,
+  BotaoLaranja,
+  BotaoLaranjaClaro,
+} from "../components/Botoes";
+import { TextoCinza, TextoPreto } from "../components/Textos";
+import ModalCustom from '../components/ModalCustom';
 
+const { height, width } = Dimensions.get("window");
 const Mapa = () => {
   const [mapLoad, setMapLoad] = useState(false);
   const [direction, setDirection] = useState(false);
   const [userLat, setUserLat] = useState(null);
   const [userLon, setUserLon] = useState(null);
+  const [userLatDelta, setUserLatDelta] = useState(0.01);
+  const [userLonDelta, setUserLonDelta] = useState(0.01);
+  const [distancia, setDistancia] = useState();
+  const [duracao, setDuracao] = useState();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [detalhes, setDetalhes] = useState(false);
 
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestPermissionsAsync();
       if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
+        setErrorMsg("Acesso a Localizacao foi negado");
       }
       let { coords } = await Location.getCurrentPositionAsync({});
       setUserLat(coords.latitude);
@@ -28,22 +48,6 @@ const Mapa = () => {
       setMapLoad(true);
     })();
   }, []);
-
-  // const onPressMarker = () => {
-  //   return (
-  //     <MapViewDirections
-  //       origin={{ latitude: -22.518345, longitude: -42.977468 }}
-  //       destination={{ latitude: -22.433883, longitude: -42.971805 }}
-  //       apikey={expo.android.config.googleMaps.apiKey}
-  //       strokeWidth={3}
-  //       strokeColor={cor.laranja_claro}
-  //       onReady={(result) => {
-  //         console.log(`Distance: ${result.distance} km`);
-  //         console.log(`Duration: ${result.duration} min.`);
-  //       }}
-  //     />
-  //   );
-  // };
 
   return (
     <Container bgCor={cor.branco} flex={1}>
@@ -62,8 +66,8 @@ const Mapa = () => {
             region={{
               latitude: userLat,
               longitude: userLon,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01,
+              latitudeDelta: userLatDelta,
+              longitudeDelta: userLonDelta,
             }}
             showsUserLocation
             showsCompass
@@ -71,17 +75,23 @@ const Mapa = () => {
             style={{
               width: "100%",
               height: "100%",
-              marginTop: 10,
             }}
           >
             {!direction ? (
-              <Marker
-                coordinate={{ latitude: -22.507931, longitude: -42.977372 }}
-                title="Coleta Produto A"
-                description="Em espera"
-                pinColor="#F28000"
-                onPress={() => setDirection(true)}
-              />
+              <Container flex={1}>
+                <Marker
+                  coordinate={{ latitude: -22.507931, longitude: -42.977372 }}
+                  title="Coleta Produto A"
+                  description="Em espera"
+                  pinColor="#F28000"
+                  onPress={() => {
+                    setModalOpen(true);
+                    setDirection(true);
+                    setUserLatDelta(0.15);
+                    setUserLonDelta(0.15);
+                  }}
+                />
+              </Container>
             ) : (
               <Container>
                 <Marker
@@ -91,14 +101,14 @@ const Mapa = () => {
                   pinColor="#F28000"
                 />
                 <MapViewDirections
-                  origin={{ latitude: -22.507931, longitude: -42.977372}}
+                  origin={{ latitude: -22.507931, longitude: -42.977372 }}
                   destination={{ latitude: -22.433883, longitude: -42.971805 }}
                   apikey={expo.android.config.googleMaps.apiKey}
                   strokeWidth={3}
                   strokeColor={cor.laranja_claro}
                   onReady={(result) => {
-                    console.log(`Distance: ${result.distance} km`);
-                    console.log(`Duration: ${result.duration} min.`);
+                    setDistancia(Math.floor(result.distance));
+                    setDuracao(Math.floor(result.duration));
                   }}
                 />
                 <Marker
@@ -110,6 +120,9 @@ const Mapa = () => {
               </Container>
             )}
           </MapView>
+          <SafeAreaView>
+            {ModalCustom(modalOpen, distancia, duracao, detalhes, setModalOpen, setDirection, setDetalhes)}
+          </SafeAreaView>
         </Container>
       )}
     </Container>
@@ -117,6 +130,7 @@ const Mapa = () => {
 };
 
 export default Mapa;
+
 
 /*
 {Marcadores.map((item) => ( 

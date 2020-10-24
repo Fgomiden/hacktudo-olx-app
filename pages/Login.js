@@ -3,9 +3,12 @@ import { View, Text } from "react-native";
 import { Container, ContCircularCima } from "../components/Constantes";
 import { TextoCinza, TextoPreto } from "../components/Textos";
 import { TextoInputCinza } from "../components/Inputs";
-import { BotaoLaranja } from "../components/Botoes";
+import {
+  BotaoLaranja,
+  BotaoLaranjaClaro,
+  BotaoCinza,
+} from "../components/Botoes";
 import { cor } from "../theme/Tema";
-
 const Login = ({ navigation }) => {
   return (
     <Container flex={1} justify="center" bgCor={cor.roxo}>
@@ -73,5 +76,4 @@ const Login = ({ navigation }) => {
     </Container>
   );
 };
-
 export default Login;
