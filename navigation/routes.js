@@ -8,6 +8,7 @@ import Mapa from '../pages/Mapa'
 import Gerenciamento from '../pages/Gerenciamento'
 import BarraInferior from './BarraInferior'
 
+
 const Stack = createStackNavigator()
 const semHeader = () => ({
     headerShown:false
@@ -22,6 +23,8 @@ export default function Rotas(){
             <Stack.Screen name="Mapa" component={Mapa}  options={semHeader}/>
             <Stack.Screen name="Gerenciamento" component={Gerenciamento}  options={semHeader}/>
             <Stack.Screen name="BarraInferior" component={BarraInferior} options={semHeader}/>
+
+            <Stack.Screen name="Login" component={Login} />
         </Stack.Navigator>
     )
 } 

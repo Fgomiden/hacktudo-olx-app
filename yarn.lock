@@ -1294,6 +1294,7 @@
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"
 
+
 "@react-navigation/core@^5.12.5":
   version "5.12.5"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.12.5.tgz#434a34893368de1c9daca9508fdd7be94d1ec642"
@@ -4683,6 +4684,7 @@ react-native-maps@0.27.1:
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.27.1.tgz#2f10cd417bb2fd938c9e015b1c9b6d9b1a44b97f"
   integrity sha512-HygBkZBecTnIVRYrSiLRAvu4OmXOYso/A7c6Cy73HkOh9CgGV8Ap5eBea24tvmFGptjj5Hg8AJ94/YbmWK1Okw==
 
+
 react-native-reanimated@~1.13.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.13.1.tgz#c370c32cc4d447ae896cb029bb9c6a2f7608c5b4"
@@ -5350,6 +5352,8 @@ strip-eof@^1.0.0:
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
 
 styled-components@^5.2.0:
+
+styled-components@^5, styled-components@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.2.0.tgz#6dcb5aa8a629c84b8d5ab34b7167e3e0c6f7ed74"
   integrity sha512-9qE8Vgp8C5cpGAIdFaQVAl89Zgx1TDM4Yf4tlHbO9cPijtpSXTMLHy9lmP0lb+yImhgPFb1AmZ1qMUubmg3HLg==
@@ -5631,7 +5635,7 @@ url-parse@^1.4.4:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
-use-subscription@^1.0.0:
+use-subscription@^1.0.0, use-subscription@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.4.1.tgz#edcbcc220f1adb2dd4fa0b2f61b6cc308e620069"
   integrity sha512-7+IIwDG/4JICrWHL/Q/ZPK5yozEnvRm6vHImu0LKwQlmWGKeiF7mbAenLlK/cTNXrTtXHU/SFASQHzB6+oSJMQ==

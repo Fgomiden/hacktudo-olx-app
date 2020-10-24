@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components';
 import Rotas from './navigation/routes';
 import {cor} from './theme/Tema';
+import Rotas from './navigation/routes';
 
 export default function App() {
   return (
@@ -15,3 +16,10 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+      <StatusBar style="auto" />
+      <Rotas/>
+    </NavigationContainer>
+  );
+}
+
